@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin Page</title>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/all-user.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+	
+		<form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" name="registration"
+				type="Submit">Logout</button>
+		</form>    
+		
+		<div class="panel-group" style="margin-top:40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+					-
+					<span th:utext="${money}"></span> VND
+				</div>
+				<div class="panel-body">
+					<a href="/user/home">Back to Home Bet</a>
+					<div ng-app="myApp" ng-controller="myCtrl" class="container content">
+						<table class="tbl-user" border=1>
+							<tr>
+								<td>Tên</td>
+								<td>Thắng</td>
+								<td>Hòa</td>
+								<td>Thua</td>
+								<td>Danh Vọng</td>
+							</tr>
+							<tr ng-repeat = "userArr in userList">
+								<td>{{userArr.user.lastName}} {{userArr.user.name}}</td>
+								<td>{{userArr.win}}</td>
+								<td>{{userArr.balance}}</td>
+								<td>{{userArr.lose}}</td>
+								<td>{{userArr.amount}} VNĐ</td>
+							</tr>
+							<tr class="footer">
+								<td>Total</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>{{getTotal(userList)}} VNĐ</td>
+							</tr>
+						</table>
+					</div> 
+				</div>
+				<p class="admin-message-text text-center"> BETT</p>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="../../js/arrange-user.js"></script>
+</body>
+</html>

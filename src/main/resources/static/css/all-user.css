@@ -1,0 +1,23 @@
+.content{
+	display: flex;
+	justify-content: center;
+}
+.tbl-user{
+	width: 70%;
+	border: 1px solid rgb(217,217,217);
+}
+
+.tbl-user tr {
+	height: 30px;
+}
+.tbl-user tr td:first-child {
+  width: 40%;
+}
+
+.tbl-user tr td:second-child {
+  width: 30%;
+}
+
+.footer{
+	background-color: rgb(192,192,192)
+}

@@ -1,0 +1,45 @@
+.content{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+}
+.text-heaer{
+	text-align: center;
+}
+
+.tbl-info{
+	text-align: center;
+	font-weight:700;
+	width: 50%;
+}
+
+.tbl-info tr td:first-child {
+  width: 50%;
+}
+
+.tbl-summary tr td:first-child {
+  width: 40%;
+  text-align:left;
+}
+
+.tbl-summary tr td:second-child {
+  width: 30%;
+  text-align:center;
+}
+
+.tbl-summary tr td:third-child {
+  width: 30%;
+  text-align:center;
+}
+
+.tbl-summary{
+	width: 80% !important;
+}
+
+.inpoint{
+	text-align: center;
+}
+
+td{
+	text-align: center;
+}
